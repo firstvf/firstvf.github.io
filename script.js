@@ -29,6 +29,7 @@ const translations = {
 
 const languageStorageKey = "portfolio-language";
 const defaultLanguage = "en";
+const projectInfoPath = "projects_info.txt";
 
 const projectImages = {
     "146_sbr": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp"],
@@ -79,6 +80,93 @@ function initializeLanguageSwitcher() {
     });
 
     applyLanguage(getInitialLanguage());
+}
+
+function createProjectLink(type, url) {
+    const link = document.createElement("a");
+    link.className = `icon-link icon-link--${type}`;
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", type === "github" ? "GitHub" : "YouTube");
+    link.textContent = type === "github" ? "GitHub" : "YouTube";
+    return link;
+}
+
+async function initializeProjectLinks() {
+    try {
+        const response = await fetch(projectInfoPath, { cache: "no-cache" });
+        if (!response.ok) {
+            return;
+        }
+
+        const projectInfo = await response.text();
+        const projects = parseProjectInfo(projectInfo);
+
+        document.querySelectorAll(".project-card[data-project]").forEach((card) => {
+            const project = projects.get(card.dataset.project);
+            if (!project) {
+                return;
+            }
+
+            const youtubeLink = card.querySelector('a[href*="youtu.be"], a[href*="youtube.com"]');
+            const linksContainer = getOrCreateLinksContainer(card, youtubeLink);
+
+            if (project.youtube && youtubeLink) {
+                youtubeLink.href = project.youtube;
+                youtubeLink.classList.add("icon-link--youtube");
+                youtubeLink.textContent = "YouTube";
+                youtubeLink.setAttribute("aria-label", "YouTube");
+            }
+
+            if (project.git && !linksContainer.querySelector('a[href*="github.com"]')) {
+                linksContainer.insertBefore(createProjectLink("github", project.git), linksContainer.firstChild);
+            }
+        });
+    } catch (error) {
+        console.warn("Failed to load project links.", error);
+    }
+}
+
+function parseProjectInfo(content) {
+    const projects = new Map();
+    const blocks = content.trim().split(/\n\s*\n/);
+
+    blocks.forEach((block) => {
+        const lines = block.split("\n");
+        const name = lines[0]?.trim();
+        if (!name) {
+            return;
+        }
+
+        const youtube = lines.find((line) => line.startsWith("youtube:"))?.slice("youtube:".length).trim() ?? "";
+        const git = lines.find((line) => line.startsWith("git:"))?.slice("git:".length).trim() ?? "";
+        projects.set(name, { youtube, git });
+    });
+
+    return projects;
+}
+
+function getOrCreateLinksContainer(card, youtubeLink) {
+    const existingContainer = card.querySelector(".project-card__links");
+    if (existingContainer) {
+        return existingContainer;
+    }
+
+    const container = document.createElement("div");
+    container.className = "project-card__links";
+
+    const content = card.querySelector(".project-card__content");
+    if (!content) {
+        return container;
+    }
+
+    if (youtubeLink) {
+        container.appendChild(youtubeLink);
+    }
+
+    content.appendChild(container);
+    return container;
 }
 
 function initializeGalleries() {
@@ -175,5 +263,6 @@ function initializeExpandableProjects() {
 document.addEventListener("DOMContentLoaded", () => {
     initializeLanguageSwitcher();
     initializeGalleries();
+    initializeProjectLinks();
     initializeExpandableProjects();
 });
