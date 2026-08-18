@@ -12,12 +12,14 @@
     <div class="container header__content">
         <a class="header__logo" href="#home">Vlad</a>
         <nav class="header__navigation" aria-label="Main navigation">
-            <a href="#projects" data-i18n="nav.projects">Projects</a>
             <a href="#stack" data-i18n="nav.stack">Tech Stack</a>
-            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
             <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
-        <button class="language-switcher" type="button" aria-label="Switch language">RU</button>
+        <div class="language-switcher" aria-label="Language selection">
+            <button class="language-button" type="button" data-language="ru" aria-label="Русский">🇷🇺</button>
+            <button class="language-button" type="button" data-language="en" aria-label="English">🇬🇧</button>
+        </div>
     </div>
 </header>
 
@@ -29,10 +31,36 @@
             <p class="hero__description" data-i18n="hero.description">Unity developer focused on gameplay programming, game systems and production-ready game development.</p>
             <div class="hero__actions">
                 <a class="button button--primary" href="#projects" data-i18n="hero.projects">View projects</a>
-                <a class="button button--secondary button--icon" href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.53-.29-5.19-1.27-5.19-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.17a10.9 10.9 0 0 1 5.7 0c2.17-1.48 3.13-1.17 3.13-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.4-2.67 5.36-5.21 5.64.41.36.77 1.08.77 2.18v3.23c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg>
-                    <span>GitHub</span>
-                </a>
+                <a class="button button--secondary" href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stack" id="stack">
+        <div class="container">
+            <div class="section-header section-header--compact">
+                <p class="section-header__eyebrow" data-i18n="stack.eyebrow">Technical stack</p>
+                <h2 class="section-header__title" data-i18n="stack.title">Technologies</h2>
+            </div>
+            <div class="stack__groups">
+                <div class="stack-group">
+                    <h3 data-i18n="stack.game">Game Development</h3>
+                    <div class="tag-list">
+                        <span>Unity</span><span>C#</span><span>DOTween</span><span>Spine</span><span>Addressables</span><span>ECS</span><span>UniRx</span><span>UniTask</span><span>NavMesh</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h3 data-i18n="stack.architecture">Architecture &amp; Tools</h3>
+                    <div class="tag-list">
+                        <span>DI</span><span>Zenject</span><span>VContainer</span><span>Odin Inspector</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h3 data-i18n="stack.services">Services &amp; SDKs</h3>
+                    <div class="tag-list">
+                        <span>Unity Localization</span><span>IAP</span><span>Firebase</span><span>Photon</span><span>Adjust</span><span>AppLovin</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -41,8 +69,8 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-header__eyebrow" data-i18n="projects.eyebrow">Selected work</p>
-                <h2 class="section-header__title" data-i18n="projects.title">Featured Projects</h2>
-                <p class="section-header__description" data-i18n="projects.description">Six projects selected to show the breadth of my Unity development experience.</p>
+                <h2 class="section-header__title" data-i18n="projects.title">Projects</h2>
+                <p class="section-header__description" data-i18n="projects.description">A selection of games and prototypes developed with Unity.</p>
             </div>
 
             <div class="projects__list">
@@ -54,78 +82,76 @@
                         <div class="gallery-counter" aria-live="polite">1 / 5</div>
                     </div>
                     <div class="project-card__content">
-                        <div class="project-card__header">
-                            <div><p class="project-card__index">01 / Featured</p><h3>179_bpp</h3></div>
-                            <span class="project-card__genre" data-i18n="project.main">Main Project</span>
-                        </div>
+                        <h3>179_bpp</h3>
                         <p class="project-card__description" data-i18n="project.179.description">A major project from my commercial Unity development experience.</p>
-                        <div class="project-card__links">
-                            <a class="icon-link" href="https://youtu.be/oR_vu4SZRwk" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg>
-                                <span>YouTube</span>
-                            </a>
-                        </div>
+                        <div class="project-card__links"><a class="icon-link" href="https://youtu.be/oR_vu4SZRwk" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div>
                     </div>
                 </article>
 
                 <article class="project-card" data-project="zm_02_ncb" data-images="cover.webp,gameplay-01.webp,gameplay-02.webp,gameplay-03.webp,gameplay-04.webp,gameplay-05.webp">
-                    <div class="project-card__media">
-                        <img class="project-card__image" src="assets/projects/zm_02_ncb/cover.webp" alt="zm_02_ncb gameplay">
-                        <button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button>
-                        <button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button>
-                        <div class="gallery-counter" aria-live="polite">1 / 6</div>
-                    </div>
-                    <div class="project-card__content">
-                        <div class="project-card__header"><div><p class="project-card__index">02</p><h3>zm_02_ncb</h3></div><span class="project-card__genre" data-i18n="project.featured">Featured</span></div>
-                        <div class="project-card__links"><a class="icon-link" href="https://youtu.be/cy9LrSMfsY8" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg><span>YouTube</span></a></div>
-                    </div>
+                    <div class="project-card__media"><img class="project-card__image" src="assets/projects/zm_02_ncb/cover.webp" alt="zm_02_ncb gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 6</div></div>
+                    <div class="project-card__content"><h3>zm_02_ncb</h3><div class="project-card__links"><a class="icon-link" href="https://youtu.be/cy9LrSMfsY8" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
                 </article>
 
                 <article class="project-card" data-project="194_ttsh" data-images="gameplay-01.webp,gameplay-02.webp,gameplay-03.webp,gameplay-04.webp,gameplay-05.webp">
                     <div class="project-card__media"><img class="project-card__image" src="assets/projects/194_ttsh/gameplay-01.webp" alt="194_ttsh gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 5</div></div>
-                    <div class="project-card__content"><div class="project-card__header"><div><p class="project-card__index">03</p><h3>194_ttsh</h3></div><span class="project-card__genre" data-i18n="project.featured">Featured</span></div><div class="project-card__links"><a class="icon-link" href="https://youtu.be/pGOKDNa1CaY" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg><span>YouTube</span></a></div></div>
+                    <div class="project-card__content"><h3>194_ttsh</h3><div class="project-card__links"><a class="icon-link" href="https://youtu.be/pGOKDNa1CaY" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
                 </article>
 
                 <article class="project-card" data-project="creo" data-images="cover.webp,gameplay-01.webp,gameplay-02.webp">
                     <div class="project-card__media"><img class="project-card__image" src="assets/projects/creo/cover.webp" alt="creo gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 3</div></div>
-                    <div class="project-card__content"><div class="project-card__header"><div><p class="project-card__index">04</p><h3>creo</h3></div><span class="project-card__genre" data-i18n="project.featured">Featured</span></div><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Creobit" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.53-.29-5.19-1.27-5.19-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.17a10.9 10.9 0 0 1 5.7 0c2.17-1.48 3.13-1.17 3.13-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.4-2.67 5.36-5.21 5.64.41.36.77 1.08.77 2.18v3.23c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a class="icon-link" href="https://youtu.be/CT7V3Xn7H08" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg><span>YouTube</span></a></div></div>
+                    <div class="project-card__content"><h3>creo</h3><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Creobit" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="icon-link" href="https://youtu.be/CT7V3Xn7H08" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
                 </article>
 
                 <article class="project-card" data-project="sd" data-images="cover.webp,gameplay-01.webp,gameplay-02.webp">
                     <div class="project-card__media"><img class="project-card__image" src="assets/projects/sd/cover.webp" alt="sd gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 3</div></div>
-                    <div class="project-card__content"><div class="project-card__header"><div><p class="project-card__index">05</p><h3>sd</h3></div><span class="project-card__genre" data-i18n="project.featured">Featured</span></div><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Squaredino" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.53-.29-5.19-1.27-5.19-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.17a10.9 10.9 0 0 1 5.7 0c2.17-1.48 3.13-1.17 3.13-1.17.62 1.57.23 2.73.11 3.02.41.36.77 1.08.77 2.18v3.23c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a class="icon-link" href="https://youtu.be/4ZZiEbelAUo" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg><span>YouTube</span></a></div></div>
+                    <div class="project-card__content"><h3>sd</h3><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Squaredino" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="icon-link" href="https://youtu.be/4ZZiEbelAUo" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
                 </article>
 
-                <article class="project-card" data-project="merge_shoot" data-images="cover.webp,gameplay-01.webp,gameplay-02.webp,gameplay-03.webp">
-                    <div class="project-card__media"><img class="project-card__image" src="assets/projects/merge_shoot/cover.webp" alt="Merge-shoot gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 4</div></div>
-                    <div class="project-card__content"><div class="project-card__header"><div><p class="project-card__index">06</p><h3>Merge-shoot</h3></div><span class="project-card__genre" data-i18n="project.shooter">Shooter</span></div><p class="project-card__description" data-i18n="project.merge.description">Zombie shooter with weapon progression through a merge mechanic.</p><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Merge-Shoot3D" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.17a10.9 10.9 0 0 1 5.7 0c2.17-1.48 3.13-1.17 3.13-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.4-2.67 5.36-5.21 5.64.41.36.77 1.08.77 2.18v3.23c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a class="icon-link" href="https://youtu.be/55tyK8AA0tE" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/></svg><span>YouTube</span></a></div></div>
+                <article class="project-card" data-project="merge_shoot" data-images="cover.webp,gameplay-01.webp,gameplay-02.webp,gameplay-03.webp,gameplay-04.webp,gameplay-05.webp">
+                    <div class="project-card__media"><img class="project-card__image" src="assets/projects/merge_shoot/cover.webp" alt="Merge-shoot gameplay"><button class="gallery-button gallery-button--previous" type="button" aria-label="Previous image">‹</button><button class="gallery-button gallery-button--next" type="button" aria-label="Next image">›</button><div class="gallery-counter" aria-live="polite">1 / 6</div></div>
+                    <div class="project-card__content"><h3>Merge-shoot</h3><p class="project-card__description" data-i18n="project.merge.description">Zombie shooter with weapon progression through a merge mechanic.</p><div class="project-card__links"><a class="icon-link" href="https://github.com/firstvf/Merge-Shoot3D" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="icon-link" href="https://youtu.be/55tyK8AA0tE" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div>
                 </article>
             </div>
         </div>
     </section>
 
-    <section class="stack" id="stack">
+    <section class="other-projects">
         <div class="container">
-            <div class="section-header"><p class="section-header__eyebrow" data-i18n="stack.eyebrow">Technical stack</p><h2 class="section-header__title" data-i18n="stack.title">Tools &amp; Technologies</h2><p class="section-header__description" data-i18n="stack.description">Technologies and services I have worked with across my Unity projects.</p></div>
-            <div class="stack__grid">
-                <div class="stack-group"><h3 data-i18n="stack.game">Game Development</h3><div class="tag-list"><span>Unity</span><span>C#</span><span>DOTween</span><span>Spine</span><span>Addressables</span><span>ECS</span><span>NavMesh</span><span>UniRx</span><span>UniTask</span></div></div>
-                <div class="stack-group"><h3 data-i18n="stack.architecture">Architecture &amp; Tools</h3><div class="tag-list"><span>DI</span><span>Zenject</span><span>VContainer</span><span>Odin Inspector</span></div></div>
-                <div class="stack-group"><h3 data-i18n="stack.services">Services &amp; SDKs</h3><div class="tag-list"><span>Unity Localization</span><span>IAP</span><span>Firebase</span><span>Photon</span><span>Adjust</span><span>AppLovin</span></div></div>
+            <div class="section-header">
+                <p class="section-header__eyebrow" data-i18n="other.eyebrow">More work</p>
+                <h2 class="section-header__title" data-i18n="other.title">Other Projects</h2>
+            </div>
+            <div class="other-projects__list">
+                <a href="https://youtu.be/Io55nwyfh2U" class="other-project" target="_blank" rel="noopener noreferrer"><span>146_sbr</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/aJpnSiN4LXU" class="other-project" target="_blank" rel="noopener noreferrer"><span>148_bbp</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/rSYfdog23lg" class="other-project" target="_blank" rel="noopener noreferrer"><span>154_ppc</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/HYCHLdvj0PI" class="other-project" target="_blank" rel="noopener noreferrer"><span>171_plp</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/iatN0Z6OfrE" class="other-project" target="_blank" rel="noopener noreferrer"><span>176_ccm</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/9x2pyHXSqGs" class="other-project" target="_blank" rel="noopener noreferrer"><span>187_bt</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/BCrsoCwXmIw" class="other-project" target="_blank" rel="noopener noreferrer"><span>199_cda</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/j8ffXWVJdpg" class="other-project" target="_blank" rel="noopener noreferrer"><span>202_nt</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/9mFkeq25Y4s" class="other-project" target="_blank" rel="noopener noreferrer"><span>209_ctsg</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/HOB-7e6aqGI" class="other-project" target="_blank" rel="noopener noreferrer"><span>211_cms</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/HxkIgnS3AL4" class="other-project" target="_blank" rel="noopener noreferrer"><span>amay</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/oz7mzyTMUrI" class="other-project" target="_blank" rel="noopener noreferrer"><span>avi</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/o_1kF5z0an0" class="other-project" target="_blank" rel="noopener noreferrer"><span>cave_dungeon</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/GclKyAnF7w4" class="other-project" target="_blank" rel="noopener noreferrer"><span>colored_tower</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/TBakoGSm-z0" class="other-project" target="_blank" rel="noopener noreferrer"><span>footman</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/REuBi7uYDIQ" class="other-project" target="_blank" rel="noopener noreferrer"><span>ltd</span><span>YouTube ↗</span></a>
+                <a href="https://youtu.be/abnMFjxlTiA" class="other-project" target="_blank" rel="noopener noreferrer"><span>rich_run</span><span>YouTube ↗</span></a>
             </div>
         </div>
     </section>
 
-    <section class="other-projects" id="other-projects">
-        <div class="container"><div class="section-header"><p class="section-header__eyebrow" data-i18n="other.eyebrow">More work</p><h2 class="section-header__title" data-i18n="other.title">Other Projects</h2></div><div class="other-projects__list">
-            <a href="https://youtu.be/Io55nwyfh2U" class="other-project" target="_blank" rel="noopener noreferrer"><span>146_sbr</span><span>YouTube ↗</span></a><a href="https://youtu.be/aJpnSiN4LXU" class="other-project" target="_blank" rel="noopener noreferrer"><span>148_bbp</span><span>YouTube ↗</span></a><a href="https://youtu.be/rSYfdog23lg" class="other-project" target="_blank" rel="noopener noreferrer"><span>154_ppc</span><span>YouTube ↗</span></a><a href="https://youtu.be/HYCHLdvj0PI" class="other-project" target="_blank" rel="noopener noreferrer"><span>171_plp</span><span>YouTube ↗</span></a><a href="https://youtu.be/iatN0Z6OfrE" class="other-project" target="_blank" rel="noopener noreferrer"><span>176_ccm</span><span>YouTube ↗</span></a><a href="https://youtu.be/9x2pyHXSqGs" class="other-project" target="_blank" rel="noopener noreferrer"><span>187_bt</span><span>YouTube ↗</span></a><a href="https://youtu.be/BCrsoCwXmIw" class="other-project" target="_blank" rel="noopener noreferrer"><span>199_cda</span><span>YouTube ↗</span></a><a href="https://youtu.be/j8ffXWVJdpg" class="other-project" target="_blank" rel="noopener noreferrer"><span>202_nt</span><span>YouTube ↗</span></a><a href="https://youtu.be/9mFkeq25Y4s" class="other-project" target="_blank" rel="noopener noreferrer"><span>209_ctsg</span><span>YouTube ↗</span></a><a href="https://youtu.be/HOB-7e6aqGI" class="other-project" target="_blank" rel="noopener noreferrer"><span>211_cms</span><span>YouTube ↗</span></a><a href="https://youtu.be/HxkIgnS3AL4" class="other-project" target="_blank" rel="noopener noreferrer"><span>amay</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/oz7mzyTMUrI" class="other-project" target="_blank" rel="noopener noreferrer"><span>avi</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/o_1kF5z0an0" class="other-project" target="_blank" rel="noopener noreferrer"><span>cave_dungeon</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/GclKyAnF7w4" class="other-project" target="_blank" rel="noopener noreferrer"><span>colored_tower</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/TBakoGSm-z0" class="other-project" target="_blank" rel="noopener noreferrer"><span>footman</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/REuBi7uYDIQ" class="other-project" target="_blank" rel="noopener noreferrer"><span>ltd</span><span>GitHub · YouTube ↗</span></a><a href="https://youtu.be/abnMFjxlTiA" class="other-project" target="_blank" rel="noopener noreferrer"><span>rich_run</span><span>GitHub · YouTube ↗</span></a>
-        </div></div>
+    <section class="contact" id="contact">
+        <div class="container contact__content">
+            <a class="contact-link" href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="contact-link" href="https://t.me/vfirstvf" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+        </div>
     </section>
-
-    <section class="about" id="about"><div class="container about__content"><div class="section-header"><p class="section-header__eyebrow" data-i18n="about.eyebrow">About</p><h2 class="section-header__title" data-i18n="about.title">Unity Developer</h2></div><div class="about__text"><p data-i18n="about.p1">I develop games with Unity and C#, focusing on gameplay mechanics, game systems and maintainable architecture.</p><p data-i18n="about.p2">My experience spans commercial and personal projects across shooter, strategy, puzzle, arcade and casual game development.</p></div></div></section>
-
-    <section class="contact" id="contact"><div class="container contact__content"><p class="section-header__eyebrow" data-i18n="contact.eyebrow">Contact</p><h2 class="contact__title" data-i18n="contact.title">Let's build something interesting.</h2><div class="contact__links"><a class="icon-link" href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.58 22.02c.57.1.78-.25.78-.55v-2.1c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.53-.29-5.19-1.27-5.19-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.13 1.17a10.9 10.9 0 0 1 5.7 0c2.17-1.48 3.13-1.17 3.13-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.4-2.67 5.36-5.21 5.64.41.36.77 1.08.77 2.18v3.23c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span></a><a href="https://t.me/vfirstvf" target="_blank" rel="noopener noreferrer">Telegram ↗</a></div></div></section>
 </main>
-<footer class="footer"><div class="container footer__content"><span>© 2026 Vlad</span><span>Unity Developer</span></div></footer>
+
 <script src="script.js"></script>
 </body>
 </html>
