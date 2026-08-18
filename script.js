@@ -175,6 +175,16 @@ function initializeContactLinks() {
         const type = link.href.includes("github.com") ? "github" : "telegram";
         link.classList.add("icon-link", `icon-link--${type}`);
     });
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .icon-link--telegram::before,
+        .icon-link[href*="t.me/"]::before {
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M21.94 3.32 18.7 20.08c-.24 1.18-.88 1.47-1.78.92l-4.9-3.61-2.36 2.27c-.26.26-.48.48-.98.48l.35-4.98 9.07-8.19c.39-.35-.09-.55-.61-.2L6.28 13.91 1.51 12.42c-1.04-.33-1.06-1.04.22-1.54L20.38 3.56c.87-.32 1.63.2 1.56-.24Z'/%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M21.94 3.32 18.7 20.08c-.24 1.18-.88 1.47-1.78.92l-4.9-3.61-2.36 2.27c-.26.26-.48.48-.98.48l.35-4.98 9.07-8.19c.39-.35-.09-.55-.61-.2L6.28 13.91 1.51 12.42c-1.04-.33-1.06-1.04.22-1.54L20.38 3.56c.87-.32 1.63.2 1.56-.24Z'/%3E%3C/svg%3E");
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 function initializeGalleries() {
@@ -269,6 +279,7 @@ function initializeExpandableProjects() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.title = "Portfolio";
     initializeLanguageSwitcher();
     initializeGalleries();
     initializeProjectLinks();
