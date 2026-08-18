@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Vlad — Unity Developer. C#, Unity, gameplay programming and game systems.">
     <title>Vlad — Unity Developer</title>
-    <meta name="description" content="Vlad — Unity Developer. C#, Unity, gameplay programming and game development.">
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header class="header">
     <div class="container header__content">
         <a class="header__logo" href="#home">Vlad</a>
-
-        <nav class="header__navigation">
+        <nav class="header__navigation" aria-label="Main navigation">
             <a href="#projects">Projects</a>
+            <a href="#stack">Tech Stack</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -25,405 +21,212 @@
 </header>
 
 <main>
-
-    <!-- Hero -->
-
     <section class="hero" id="home">
         <div class="container hero__content">
-
             <p class="hero__eyebrow">Unity Developer</p>
-
-            <h1 class="hero__title">
-                Building games<br>
-                with <span>C# & Unity</span>
-            </h1>
-
-            <p class="hero__description">
-                Unity developer focused on gameplay programming,
-                game systems and interactive experiences.
-            </p>
-
+            <h1 class="hero__title">Building games<br>with <span>C# &amp; Unity</span></h1>
+            <p class="hero__description">Unity developer focused on gameplay programming, game systems and production-ready game development.</p>
             <div class="hero__actions">
-                <a class="button button--primary" href="#projects">
-                    View projects
-                </a>
-
-                <a class="button button--secondary"
-                   href="https://github.com/firstvf"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    GitHub
-                </a>
+                <a class="button button--primary" href="#projects">View projects</a>
+                <a class="button button--secondary" href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-
         </div>
     </section>
-
-
-    <!-- Projects -->
 
     <section class="projects" id="projects">
         <div class="container">
-
             <div class="section-header">
-                <p class="section-header__eyebrow">Portfolio</p>
+                <p class="section-header__eyebrow">Selected work</p>
                 <h2 class="section-header__title">Featured Projects</h2>
-                <p class="section-header__description">
-                    A selection of games and prototypes developed with Unity.
-                </p>
+                <p class="section-header__description">Six projects selected to show the breadth of my Unity development experience.</p>
             </div>
-
 
             <div class="projects__grid">
-
-                <!-- Merge-shoot -->
-
-                <article class="project-card project-card--featured">
-
-                    <div class="project-card__image project-card__image--placeholder">
-                        <span>MERGE-SHOOT</span>
-                    </div>
-
+                <article class="project-card project-card--hero">
+                    <a class="project-card__media" href="https://youtu.be/oR_vu4SZRwk" target="_blank" rel="noopener noreferrer" aria-label="Watch 179_bpp demo">
+                        <img src="assets/projects/179_bpp/cover.webp" alt="179_bpp gameplay" loading="eager">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
                     <div class="project-card__content">
-
                         <div class="project-card__header">
-                            <h3>Merge-shoot</h3>
-                            <span class="project-card__genre">
-                                Shooter
-                            </span>
+                            <div>
+                                <p class="project-card__index">01 / Featured</p>
+                                <h3>179_bpp</h3>
+                            </div>
+                            <span class="project-card__genre">Main Project</span>
                         </div>
-
-                        <p class="project-card__description">
-                            Zombie shooter with weapon progression
-                            through a merge system.
-                        </p>
-
-                        <div class="project-card__technologies">
-                            <span>Shader Graph</span>
-                            <span>VFX</span>
-                            <span>Merge System</span>
-                            <span>Drag & Drop</span>
-                        </div>
-
+                        <p class="project-card__description">A major project from my commercial Unity development experience.</p>
                         <div class="project-card__links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Demo
-                            </a>
+                            <a href="https://youtu.be/oR_vu4SZRwk" target="_blank" rel="noopener noreferrer">Demo ↗</a>
                         </div>
-
                     </div>
-
                 </article>
-
-
-                <!-- Tower Defense -->
 
                 <article class="project-card">
-
-                    <div class="project-card__image project-card__image--placeholder">
-                        <span>TOWER DEFENSE</span>
-                    </div>
-
+                    <a class="project-card__media" href="https://youtu.be/cy9LrSMfsY8" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/projects/zm_02_ncb/cover.webp" alt="zm_02_ncb gameplay" loading="lazy">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
                     <div class="project-card__content">
-
                         <div class="project-card__header">
-                            <h3>Tower Defense</h3>
-                            <span class="project-card__genre">
-                                Strategy
-                            </span>
+                            <div><p class="project-card__index">02</p><h3>zm_02_ncb</h3></div>
+                            <span class="project-card__genre">Featured</span>
                         </div>
-
-                        <p class="project-card__description">
-                            Tower Defense game with tower grading
-                            and experience progression.
-                        </p>
-
-                        <div class="project-card__technologies">
-                            <span>Unity</span>
-                            <span>C#</span>
-                        </div>
-
-                        <div class="project-card__links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Demo
-                            </a>
-                        </div>
-
+                        <div class="project-card__links"><a href="https://youtu.be/cy9LrSMfsY8" target="_blank" rel="noopener noreferrer">Demo ↗</a></div>
                     </div>
-
                 </article>
-
-
-                <!-- Solitaire -->
 
                 <article class="project-card">
-
-                    <div class="project-card__image project-card__image--placeholder">
-                        <span>SOLITAIRE</span>
-                    </div>
-
+                    <a class="project-card__media" href="https://youtu.be/pGOKDNa1CaY" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/projects/194_ttsh/gameplay-01.webp" alt="194_ttsh gameplay" loading="lazy">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
                     <div class="project-card__content">
-
                         <div class="project-card__header">
-                            <h3>Solitaire-TriPeaks + Clicker</h3>
-                            <span class="project-card__genre">
-                                Casual
-                            </span>
+                            <div><p class="project-card__index">03</p><h3>194_ttsh</h3></div>
+                            <span class="project-card__genre">Featured</span>
                         </div>
-
-                        <p class="project-card__description">
-                            TriPeaks Solitaire combined with
-                            a clicker mini-game.
-                        </p>
-
-                        <div class="project-card__technologies">
-                            <span>Addressables</span>
-                            <span>UniTask</span>
-                            <span>DOTween</span>
-                            <span>JSON</span>
-                        </div>
-
-                        <div class="project-card__links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Demo
-                            </a>
-                        </div>
-
+                        <div class="project-card__links"><a href="https://youtu.be/pGOKDNa1CaY" target="_blank" rel="noopener noreferrer">Demo ↗</a></div>
                     </div>
-
                 </article>
-
-
-                <!-- Strategy -->
 
                 <article class="project-card">
-
-                    <div class="project-card__image project-card__image--placeholder">
-                        <span>STRATEGY</span>
-                    </div>
-
+                    <a class="project-card__media" href="https://youtu.be/CT7V3Xn7H08" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/projects/creo/cover.webp" alt="creo gameplay" loading="lazy">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
                     <div class="project-card__content">
-
                         <div class="project-card__header">
-                            <h3>Strategy</h3>
-                            <span class="project-card__genre">
-                                Strategy
-                            </span>
+                            <div><p class="project-card__index">04</p><h3>creo</h3></div>
+                            <span class="project-card__genre">Featured</span>
                         </div>
-
-                        <p class="project-card__description">
-                            Strategy game with unit progression
-                            and construction mechanics.
-                        </p>
-
-                        <div class="project-card__technologies">
-                            <span>Unity</span>
-                            <span>C#</span>
-                        </div>
-
                         <div class="project-card__links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Demo
-                            </a>
+                            <a href="https://github.com/firstvf/Creobit" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                            <a href="https://youtu.be/CT7V3Xn7H08" target="_blank" rel="noopener noreferrer">Demo ↗</a>
                         </div>
-
                     </div>
-
                 </article>
-
-
-                <!-- Dungeon Crawler -->
 
                 <article class="project-card">
-
-                    <div class="project-card__image project-card__image--placeholder">
-                        <span>DUNGEON CRAWLER</span>
-                    </div>
-
+                    <a class="project-card__media" href="https://youtu.be/4ZZiEbelAUo" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/projects/sd/cover.webp" alt="sd gameplay" loading="lazy">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
                     <div class="project-card__content">
-
                         <div class="project-card__header">
-                            <h3>Dungeon Crawler</h3>
-                            <span class="project-card__genre">
-                                Adventure
-                            </span>
+                            <div><p class="project-card__index">05</p><h3>sd</h3></div>
+                            <span class="project-card__genre">Featured</span>
                         </div>
-
-                        <p class="project-card__description">
-                            A small dungeon crawler featuring
-                            skeletons and a boss fight.
-                        </p>
-
-                        <div class="project-card__technologies">
-                            <span>Unity</span>
-                            <span>C#</span>
-                        </div>
-
                         <div class="project-card__links">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                GitHub
-                            </a>
-
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                Demo
-                            </a>
+                            <a href="https://github.com/firstvf/Squaredino" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                            <a href="https://youtu.be/4ZZiEbelAUo" target="_blank" rel="noopener noreferrer">Demo ↗</a>
                         </div>
-
                     </div>
-
                 </article>
 
+                <article class="project-card">
+                    <a class="project-card__media" href="https://youtu.be/55tyK8AA0tE" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/projects/merge_shoot/cover.webp" alt="Merge-shoot gameplay" loading="lazy">
+                        <span class="project-card__play">Watch demo ↗</span>
+                    </a>
+                    <div class="project-card__content">
+                        <div class="project-card__header">
+                            <div><p class="project-card__index">06</p><h3>Merge-shoot</h3></div>
+                            <span class="project-card__genre">Shooter</span>
+                        </div>
+                        <p class="project-card__description">Zombie shooter with weapon progression through a merge mechanic.</p>
+                        <div class="project-card__links">
+                            <a href="https://github.com/firstvf/Merge-Shoot3D" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                            <a href="https://youtu.be/55tyK8AA0tE" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-
         </div>
     </section>
 
-
-    <!-- Other projects -->
-
-    <section class="other-projects">
+    <section class="stack" id="stack">
         <div class="container">
+            <div class="section-header">
+                <p class="section-header__eyebrow">Technical stack</p>
+                <h2 class="section-header__title">Tools &amp; Technologies</h2>
+                <p class="section-header__description">Technologies and services I have worked with across my Unity projects.</p>
+            </div>
+            <div class="stack__grid">
+                <div class="stack-group">
+                    <h3>Game Development</h3>
+                    <div class="tag-list">
+                        <span>Unity</span><span>C#</span><span>DOTween</span><span>Spine</span><span>Addressables</span><span>ECS</span><span>UniRx</span><span>UniTask</span><span>NavMesh</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h3>Architecture &amp; Tools</h3>
+                    <div class="tag-list">
+                        <span>DI</span><span>Zenject</span><span>VContainer</span><span>Odin Inspector</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h3>Services &amp; SDKs</h3>
+                    <div class="tag-list">
+                        <span>Unity Localization</span><span>IAP</span><span>Firebase</span><span>Photon</span><span>Adjust</span><span>AppLovin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="other-projects" id="other-projects">
+        <div class="container">
             <div class="section-header">
                 <p class="section-header__eyebrow">More work</p>
                 <h2 class="section-header__title">Other Projects</h2>
             </div>
-
             <div class="other-projects__list">
-
-                <a href="#" class="other-project">
-                    <span>Time-Shift Platformer</span>
-                    <span>Platformer →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Match-3</span>
-                    <span>Puzzle →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Math Puzzle</span>
-                    <span>Puzzle →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Time Management Puzzle</span>
-                    <span>Casual →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Light Reflection Puzzle</span>
-                    <span>Puzzle →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Casual Sorting Puzzle</span>
-                    <span>Puzzle →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Endless Vertical Runner</span>
-                    <span>Runner →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Arcade Sports Puzzle</span>
-                    <span>Arcade →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Arcade</span>
-                    <span>Runner →</span>
-                </a>
-
-                <a href="#" class="other-project">
-                    <span>Puzzle</span>
-                    <span>Puzzle →</span>
-                </a>
-
+                <a href="https://youtu.be/Io55nwyfh2U" class="other-project" target="_blank" rel="noopener noreferrer"><span>146_sbr</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/aJpnSiN4LXU" class="other-project" target="_blank" rel="noopener noreferrer"><span>148_bbp</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/rSYfdog23lg" class="other-project" target="_blank" rel="noopener noreferrer"><span>154_ppc</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/HYCHLdvj0PI" class="other-project" target="_blank" rel="noopener noreferrer"><span>171_plp</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/iatN0Z6OfrE" class="other-project" target="_blank" rel="noopener noreferrer"><span>176_ccm</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/9x2pyHXSqGs" class="other-project" target="_blank" rel="noopener noreferrer"><span>187_bt</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/BCrsoCwXmIw" class="other-project" target="_blank" rel="noopener noreferrer"><span>199_cda</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/j8ffXWVJdpg" class="other-project" target="_blank" rel="noopener noreferrer"><span>202_nt</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/9mFkeq25Y4s" class="other-project" target="_blank" rel="noopener noreferrer"><span>209_ctsg</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/HOB-7e6aqGI" class="other-project" target="_blank" rel="noopener noreferrer"><span>211_cms</span><span>Demo ↗</span></a>
+                <a href="https://youtu.be/HxkIgnS3AL4" class="other-project" target="_blank" rel="noopener noreferrer"><span>amay</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/oz7mzyTMUrI" class="other-project" target="_blank" rel="noopener noreferrer"><span>avi</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/o_1kF5z0an0" class="other-project" target="_blank" rel="noopener noreferrer"><span>cave_dungeon</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/GclKyAnF7w4" class="other-project" target="_blank" rel="noopener noreferrer"><span>colored_tower</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/TBakoGSm-z0" class="other-project" target="_blank" rel="noopener noreferrer"><span>footman</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/REuBi7uYDIQ" class="other-project" target="_blank" rel="noopener noreferrer"><span>ltd</span><span>GitHub · Demo ↗</span></a>
+                <a href="https://youtu.be/abnMFjxlTiA" class="other-project" target="_blank" rel="noopener noreferrer"><span>rich_run</span><span>GitHub · Demo ↗</span></a>
             </div>
-
         </div>
     </section>
-
-
-    <!-- About -->
 
     <section class="about" id="about">
         <div class="container about__content">
-
             <div class="section-header">
                 <p class="section-header__eyebrow">About</p>
-                <h2 class="section-header__title">
-                    Unity Developer
-                </h2>
+                <h2 class="section-header__title">Unity Developer</h2>
             </div>
-
             <div class="about__text">
-                <p>
-                    I develop games with Unity and C#, focusing on
-                    gameplay mechanics, game systems and clean,
-                    maintainable code.
-                </p>
-
-                <p>
-                    My portfolio includes puzzle, arcade, strategy,
-                    shooter and casual games.
-                </p>
+                <p>I develop games with Unity and C#, focusing on gameplay mechanics, game systems and maintainable architecture.</p>
+                <p>My experience spans commercial and personal projects across shooter, strategy, puzzle, arcade and casual game development.</p>
             </div>
-
         </div>
     </section>
-
-
-    <!-- Contact -->
 
     <section class="contact" id="contact">
         <div class="container contact__content">
-
             <p class="section-header__eyebrow">Contact</p>
-
-            <h2 class="contact__title">
-                Let's build something interesting.
-            </h2>
-
+            <h2 class="contact__title">Let's build something interesting.</h2>
             <div class="contact__links">
-
-                <a href="https://github.com/firstvf"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    GitHub
-                </a>
-
-                <a href="https://t.me/vfirstvf"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Telegram
-                </a>
-
+                <a href="https://github.com/firstvf" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://t.me/vfirstvf" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
             </div>
-
         </div>
     </section>
-
 </main>
-
 
 <footer class="footer">
     <div class="container footer__content">
@@ -431,6 +234,5 @@
         <span>Unity Developer</span>
     </div>
 </footer>
-
 </body>
 </html>
