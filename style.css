@@ -51,6 +51,9 @@ button { font: inherit; }
 .project-card__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .icon-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,.02); color: var(--text-primary); font-size: 12px; font-weight: 600; transition: color .2s ease, border-color .2s ease, background .2s ease; }
 .icon-link:hover { color: var(--accent); border-color: #343b45; background: var(--surface-hover); }
+.icon-link::before { content: ""; display: block; width: 16px; height: 16px; flex: 0 0 16px; background: currentColor; mask-repeat: no-repeat; mask-position: center; mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; -webkit-mask-size: contain; }
+.icon-link--github::before, .icon-link[href*="github.com"]::before { mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.01c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.75 2.7 1.24 3.36.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.35.78 1.04.78 2.1v3.11c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z'/%3E%3C/svg%3E"); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.01c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.75 2.7 1.24 3.36.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.35.78 1.04.78 2.1v3.11c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z'/%3E%3C/svg%3E"); }
+.icon-link--youtube::before, .icon-link[href*="youtu.be"]::before, .icon-link[href*="youtube.com"]::before { mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.55 15.59V8.41L15.82 12l-6.27 3.59Z'/%3E%3C/svg%3E"); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.55 15.59V8.41L15.82 12l-6.27 3.59Z'/%3E%3C/svg%3E"); }
 .gallery-button { position: absolute; top: 50%; z-index: 2; width: 38px; height: 38px; transform: translateY(-50%); border: 1px solid rgba(255,255,255,.14); border-radius: 50%; background: rgba(8,10,13,.68); color: white; cursor: pointer; font-size: 27px; line-height: 1; backdrop-filter: blur(8px); transition: background .2s ease, transform .2s ease; }
 .gallery-button:hover { background: rgba(8,10,13,.9); transform: translateY(-50%) scale(1.05); }
 .gallery-button--previous { left: 12px; }
@@ -65,18 +68,22 @@ button { font: inherit; }
 .project-card--compact .project-card__content { min-height: 76px; padding: 16px 18px; flex-direction: row; align-items: center; justify-content: space-between; gap: 14px; }
 .project-card--compact h3 { font-size: 18px; }
 .project-card--compact .icon-link { flex-shrink: 0; }
+.project-card--compact .project-card__links { margin-top: 0; justify-content: flex-end; }
 .project-card--compact .gallery-button { opacity: 0; pointer-events: none; }
 .project-card--compact .gallery-counter { bottom: 8px; }
 .project-card--compact.is-expanded { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.65fr) minmax(220px, .55fr); box-shadow: 0 16px 40px rgba(0,0,0,.28); border-color: #343b45; }
 .project-card--compact.is-expanded .project-card__media { height: 330px; border-right: 1px solid var(--border); border-bottom: 0; }
 .project-card--compact.is-expanded .project-card__content { min-height: 0; padding: 26px; flex-direction: column; align-items: stretch; justify-content: center; }
-.project-card--compact.is-expanded .project-card__links { margin-top: 24px; }
+.project-card--compact.is-expanded .project-card__links { margin-top: 24px; justify-content: flex-start; }
 .project-card--compact.is-expanded .gallery-button { opacity: 1; pointer-events: auto; }
 
 .contact { padding: 72px 0; background: #0b0d10; border-top: 1px solid var(--border); }
 .contact__content { display: flex; align-items: center; justify-content: flex-start; gap: 14px; }
-.contact-link { display: inline-flex; align-items: center; min-height: 42px; padding: 0 15px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); color: var(--text-secondary); font-size: 14px; font-weight: 600; transition: color .2s ease, border-color .2s ease, background .2s ease; }
+.contact-link { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 15px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); color: var(--text-secondary); font-size: 14px; font-weight: 600; transition: color .2s ease, border-color .2s ease, background .2s ease; }
 .contact-link:hover { color: var(--text-primary); border-color: #3a414c; background: var(--surface-hover); }
+.contact-link__icon { width: 16px; height: 16px; flex: 0 0 16px; fill: currentColor; }
+
+.icon-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 @media (max-width: 900px) {
     .stack__groups { grid-template-columns: 1fr; }
