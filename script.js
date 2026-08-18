@@ -4,8 +4,6 @@ const translations = {
         "nav.projects": "Projects",
         "nav.contact": "Contact",
         "hero.eyebrow": "Unity Developer",
-        "hero.description": "Unity developer focused on gameplay programming, game systems and production-ready game development.",
-        "hero.projects": "View projects",
         "stack.eyebrow": "Technical stack",
         "stack.title": "Technologies",
         "stack.game": "Game Development",
@@ -13,31 +11,29 @@ const translations = {
         "stack.services": "Services & SDKs",
         "projects.eyebrow": "Selected work",
         "projects.title": "Projects",
-        "projects.description": "A selection of games and prototypes developed with Unity.",
         "project.179.description": "A major project from my commercial Unity development experience.",
         "project.merge.description": "Zombie shooter with weapon progression through a merge mechanic.",
         "other.eyebrow": "More work",
-        "other.title": "Other Projects"
+        "other.title": "Other Projects",
+        "contact.eyebrow": "Contact"
     },
     ru: {
         "nav.stack": "Технологии",
         "nav.projects": "Проекты",
         "nav.contact": "Контакты",
         "hero.eyebrow": "Unity-разработчик",
-        "hero.description": "Unity-разработчик, специализирующийся на gameplay programming, игровых системах и production-ready разработке.",
-        "hero.projects": "Проекты",
         "stack.eyebrow": "Технологический стек",
         "stack.title": "Технологии",
         "stack.game": "Разработка игр",
         "stack.architecture": "Архитектура и инструменты",
         "stack.services": "Сервисы и SDK",
-        "projects.eyebrow": "Избранные работы",
+        "projects.eyebrow": "Работы",
         "projects.title": "Проекты",
-        "projects.description": "Подборка игр и прототипов, разработанных на Unity.",
         "project.179.description": "Крупный коммерческий проект из моего опыта Unity-разработки.",
         "project.merge.description": "Зомби-шутер с развитием оружия через механику merge.",
         "other.eyebrow": "Другие работы",
-        "other.title": "Другие проекты"
+        "other.title": "Другие проекты",
+        "contact.eyebrow": "Контакты"
     }
 };
 
