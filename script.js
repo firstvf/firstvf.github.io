@@ -2,27 +2,27 @@ const translations = {
     en: {
         "nav.stack": "Tech Stack",
         "nav.projects": "Projects",
-        "nav.other": "Other Projects",
+        "nav.other": "More Projects",
         "nav.contact": "Contact",
         "stack.eyebrow": "Technical stack",
         "stack.game": "Game Development",
         "stack.architecture": "Architecture & Tools",
         "stack.services": "Services & SDKs",
-        "projects.eyebrow": "Work",
-        "other.eyebrow": "Other Projects",
+        "projects.eyebrow": "Projects",
+        "other.eyebrow": "More Projects",
         "contact.eyebrow": "Contact"
     },
     ru: {
         "nav.stack": "Технологии",
         "nav.projects": "Проекты",
-        "nav.other": "Другие проекты",
+        "nav.other": "Ещё проекты",
         "nav.contact": "Контакты",
         "stack.eyebrow": "Технологический стек",
         "stack.game": "Разработка игр",
         "stack.architecture": "Архитектура и инструменты",
         "stack.services": "Сервисы и SDK",
-        "projects.eyebrow": "Работы",
-        "other.eyebrow": "Другие проекты",
+        "projects.eyebrow": "Проекты",
+        "other.eyebrow": "Ещё проекты",
         "contact.eyebrow": "Контакты"
     }
 };
@@ -115,6 +115,7 @@ async function initializeProjectLinks() {
             if (project.youtube && youtubeLink) {
                 youtubeLink.href = project.youtube;
                 youtubeLink.classList.add("icon-link--youtube");
+                youtubeLink.classList.add("icon-link");
                 youtubeLink.textContent = "YouTube";
                 youtubeLink.setAttribute("aria-label", "YouTube");
             }
@@ -167,6 +168,36 @@ function getOrCreateLinksContainer(card, youtubeLink) {
 
     content.appendChild(container);
     return container;
+}
+
+function createContactIcon(link, type) {
+    const svgNamespace = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNamespace, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.style.width = "18px";
+    svg.style.height = "18px";
+    svg.style.flexShrink = "0";
+
+    const path = document.createElementNS(svgNamespace, "path");
+    path.setAttribute("fill", "currentColor");
+    path.setAttribute("d", type === "github"
+        ? "M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.01c-3.2.7-3.87-1.35-3.87-1.35-.53-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.75 2.7 1.24 3.36.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.35.78 1.04.78 2.1v3.11c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+        : "M21.94 3.32 18.7 20.08c-.24 1.18-.88 1.47-1.78.92l-4.9-3.61-2.36 2.27c-.26.26-.48.48-.98.48l.35-4.98 9.07-8.19c.39-.35-.09-.55-.61-.2L6.28 13.91 1.51 12.42c-1.04-.33-1.06-1.04.22-1.54L20.38 3.56c.87-.32 1.63.2 1.56-.24Z");
+
+    svg.appendChild(path);
+    link.prepend(svg);
+}
+
+function initializeContactLinks() {
+    document.querySelectorAll('.contact__content a[href*="github.com"], .contact__content a[href*="t.me/"]').forEach((link) => {
+        const type = link.href.includes("github.com") ? "github" : "telegram";
+        link.classList.add("icon-link", `icon-link--${type}`);
+        link.style.display = "inline-flex";
+        link.style.alignItems = "center";
+        link.style.gap = "8px";
+        createContactIcon(link, type);
+    });
 }
 
 function initializeGalleries() {
@@ -264,5 +295,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeLanguageSwitcher();
     initializeGalleries();
     initializeProjectLinks();
+    initializeContactLinks();
     initializeExpandableProjects();
 });
