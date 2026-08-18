@@ -1,10 +1,16 @@
 const translations = {
     en: {
+        "nav.stack": "Tech Stack",
         "nav.projects": "Projects",
         "nav.contact": "Contact",
         "hero.eyebrow": "Unity Developer",
         "hero.description": "Unity developer focused on gameplay programming, game systems and production-ready game development.",
         "hero.projects": "View projects",
+        "stack.eyebrow": "Technical stack",
+        "stack.title": "Technologies",
+        "stack.game": "Game Development",
+        "stack.architecture": "Architecture & Tools",
+        "stack.services": "Services & SDKs",
         "projects.eyebrow": "Selected work",
         "projects.title": "Projects",
         "projects.description": "A selection of games and prototypes developed with Unity.",
@@ -14,11 +20,17 @@ const translations = {
         "other.title": "Other Projects"
     },
     ru: {
+        "nav.stack": "Технологии",
         "nav.projects": "Проекты",
         "nav.contact": "Контакты",
         "hero.eyebrow": "Unity-разработчик",
         "hero.description": "Unity-разработчик, специализирующийся на gameplay programming, игровых системах и production-ready разработке.",
         "hero.projects": "Проекты",
+        "stack.eyebrow": "Технологический стек",
+        "stack.title": "Технологии",
+        "stack.game": "Разработка игр",
+        "stack.architecture": "Архитектура и инструменты",
+        "stack.services": "Сервисы и SDK",
         "projects.eyebrow": "Избранные работы",
         "projects.title": "Проекты",
         "projects.description": "Подборка игр и прототипов, разработанных на Unity.",
@@ -56,13 +68,11 @@ function applyLanguage(language) {
 }
 
 function initializeLanguageSwitcher() {
-    applyLanguage(getInitialLanguage());
-
     document.querySelectorAll(".language-button").forEach((button) => {
-        button.addEventListener("click", () => {
-            applyLanguage(button.dataset.language);
-        });
+        button.addEventListener("click", () => applyLanguage(button.dataset.language));
     });
+
+    applyLanguage(getInitialLanguage());
 }
 
 function initializeGalleries() {
@@ -74,19 +84,25 @@ function initializeGalleries() {
         const projectName = card.dataset.project;
         const imageNames = card.dataset.images.split(",");
         let currentIndex = 0;
+        let transitionToken = 0;
 
         function showImage(index) {
             currentIndex = (index + imageNames.length) % imageNames.length;
-            image.style.opacity = "0";
+            const imagePath = `assets/projects/${projectName}/${imageNames[currentIndex]}`;
+            const token = ++transitionToken;
+
+            image.classList.add("is-changing");
+            counter.textContent = `${currentIndex + 1} / ${imageNames.length}`;
 
             window.setTimeout(() => {
-                image.src = `assets/projects/${projectName}/${imageNames[currentIndex]}`;
-                image.onload = () => {
-                    image.style.opacity = "1";
-                };
-            }, 100);
+                if (token !== transitionToken) {
+                    return;
+                }
 
-            counter.textContent = `${currentIndex + 1} / ${imageNames.length}`;
+                image.onload = () => image.classList.remove("is-changing");
+                image.onerror = () => image.classList.remove("is-changing");
+                image.src = imagePath;
+            }, 160);
         }
 
         previousButton.addEventListener("click", () => showImage(currentIndex - 1));
