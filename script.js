@@ -2,43 +2,53 @@ const translations = {
     en: {
         "nav.stack": "Tech Stack",
         "nav.projects": "Projects",
+        "nav.other": "Other Projects",
         "nav.contact": "Contact",
-        "hero.eyebrow": "Unity Developer",
         "stack.eyebrow": "Technical stack",
-        "stack.title": "Technologies",
         "stack.game": "Game Development",
         "stack.architecture": "Architecture & Tools",
         "stack.services": "Services & SDKs",
-        "projects.eyebrow": "Selected work",
-        "projects.title": "Projects",
-        "project.179.description": "A major project from my commercial Unity development experience.",
-        "project.merge.description": "Zombie shooter with weapon progression through a merge mechanic.",
-        "other.eyebrow": "More work",
-        "other.title": "Other Projects",
+        "projects.eyebrow": "Work",
+        "other.eyebrow": "Other Projects",
         "contact.eyebrow": "Contact"
     },
     ru: {
         "nav.stack": "Технологии",
         "nav.projects": "Проекты",
+        "nav.other": "Другие проекты",
         "nav.contact": "Контакты",
-        "hero.eyebrow": "Unity-разработчик",
         "stack.eyebrow": "Технологический стек",
-        "stack.title": "Технологии",
         "stack.game": "Разработка игр",
         "stack.architecture": "Архитектура и инструменты",
         "stack.services": "Сервисы и SDK",
         "projects.eyebrow": "Работы",
-        "projects.title": "Проекты",
-        "project.179.description": "Крупный коммерческий проект из моего опыта Unity-разработки.",
-        "project.merge.description": "Зомби-шутер с развитием оружия через механику merge.",
-        "other.eyebrow": "Другие работы",
-        "other.title": "Другие проекты",
+        "other.eyebrow": "Другие проекты",
         "contact.eyebrow": "Контакты"
     }
 };
 
 const languageStorageKey = "portfolio-language";
 const defaultLanguage = "en";
+
+const projectImages = {
+    "146_sbr": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp"],
+    "148_bbp": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp"],
+    "154_ppc": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp"],
+    "171_plp": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp"],
+    "176_ccm": ["cover.webp", "gameplay-01.webp"],
+    "187_bt": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp"],
+    "199_cda": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp"],
+    "202_nt": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp", "gameplay-04.webp", "gameplay-05.webp"],
+    "209_ctsg": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp", "gameplay-04.webp"],
+    "211_cms": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp", "gameplay-04.webp"],
+    "amay": ["cover.webp", "gameplay-01.webp"],
+    "avi": ["cover.webp", "gameplay-01.webp"],
+    "cave_dungeon": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp", "gameplay-03.webp", "gameplay-04.webp", "gameplay-05.webp"],
+    "colored_tower": ["cover.webp", "gameplay-01.webp"],
+    "footman": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp"],
+    "ltd": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp"],
+    "rich_run": ["cover.webp", "gameplay-01.webp", "gameplay-02.webp"]
+};
 
 function getInitialLanguage() {
     const savedLanguage = localStorage.getItem(languageStorageKey);
@@ -72,15 +82,19 @@ function initializeLanguageSwitcher() {
 }
 
 function initializeGalleries() {
-    document.querySelectorAll(".project-card[data-images]").forEach((card) => {
+    document.querySelectorAll(".project-card[data-project]").forEach((card) => {
         const image = card.querySelector(".project-card__image");
         const previousButton = card.querySelector(".gallery-button--previous");
         const nextButton = card.querySelector(".gallery-button--next");
         const counter = card.querySelector(".gallery-counter");
         const projectName = card.dataset.project;
-        const imageNames = card.dataset.images.split(",");
+        const imageNames = projectImages[projectName] ?? card.dataset.images.split(",");
         let currentIndex = 0;
         let transitionToken = 0;
+
+        function updateCounter() {
+            counter.textContent = `${currentIndex + 1} / ${imageNames.length}`;
+        }
 
         function showImage(index) {
             currentIndex = (index + imageNames.length) % imageNames.length;
@@ -88,7 +102,7 @@ function initializeGalleries() {
             const token = ++transitionToken;
 
             image.classList.add("is-changing");
-            counter.textContent = `${currentIndex + 1} / ${imageNames.length}`;
+            updateCounter();
 
             window.setTimeout(() => {
                 if (token !== transitionToken) {
@@ -101,12 +115,65 @@ function initializeGalleries() {
             }, 160);
         }
 
-        previousButton.addEventListener("click", () => showImage(currentIndex - 1));
-        nextButton.addEventListener("click", () => showImage(currentIndex + 1));
+        updateCounter();
+
+        if (imageNames.length > 1 && previousButton && nextButton) {
+            previousButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                showImage(currentIndex - 1);
+            });
+            nextButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                showImage(currentIndex + 1);
+            });
+        } else {
+            previousButton?.remove();
+            nextButton?.remove();
+        }
+    });
+}
+
+function initializeExpandableProjects() {
+    document.querySelectorAll(".project-card--compact").forEach((card) => {
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-expanded", "false");
+
+        function toggleExpanded() {
+            const shouldExpand = !card.classList.contains("is-expanded");
+
+            document.querySelectorAll(".project-card--compact.is-expanded").forEach((expandedCard) => {
+                expandedCard.classList.remove("is-expanded");
+                expandedCard.setAttribute("aria-expanded", "false");
+            });
+
+            if (shouldExpand) {
+                card.classList.add("is-expanded");
+                card.setAttribute("aria-expanded", "true");
+            }
+        }
+
+        card.addEventListener("click", (event) => {
+            if (event.target.closest("a, button")) {
+                return;
+            }
+
+            toggleExpanded();
+        });
+
+        card.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+
+            event.preventDefault();
+            toggleExpanded();
+        });
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     initializeLanguageSwitcher();
     initializeGalleries();
+    initializeExpandableProjects();
 });
